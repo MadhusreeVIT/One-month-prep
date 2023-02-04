@@ -1,0 +1,31 @@
+1) def diagonalDifference(arr):
+    temp = 0
+    emp = 0
+    for i in range(0,len(arr)):
+        temp = temp + arr[i][i]
+    
+    for j in range(0,len(arr)):
+        emp = emp + arr[j][len(arr)-1-j]
+    
+    return abs(temp - emp)
+
+        
+ 2)def lonelyinteger(a):
+    a = sorted(a)
+    if len(a) < 3:
+        return a[0]
+    elif a[0] != a[1]:
+        return a[0]
+    else:
+        return lonelyinteger(a[2:])
+        
+        
+  3)n = int(input())
+ar = list(map(int, input().split()))
+
+tot = [0]*100
+
+for j in range(0,n):
+    temp = ar[j]
+    tot[temp] += 1
+print(*tot, sep =' ')    
