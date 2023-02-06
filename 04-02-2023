@@ -1,0 +1,46 @@
+1)import sys
+
+
+x = int(input().strip())
+squares = list(map(int, input().strip().split(' ')))
+a,b = input().strip().split(' ')
+a,b = [int(a),int(b)]
+# your code goes here
+
+count = 0
+for i in range(b, x+1):
+    if sum(squares[i-b:i]) == a:
+        count += 1
+        
+print(count)
+
+2) def strings_xor(s, t):
+    res = ""
+    for i in range(len(s)):
+        if bool(1-int(s[i])^int(t[i])):
+            res = res+ '0';
+        else:
+            res = res+ '1';
+
+    return res
+
+s = input()
+t = input()
+print(strings_xor(s, t))
+
+3) def rl(X=str):
+    return list(map(X,input().split()))
+
+X, = rl(int)
+for _ in range((X)):
+    N,K = rl(int)
+    A = rl(int)
+    B = rl(int)
+    A.sort()
+    B.sort(reverse=True)
+    bad = len([a+b for a,b in zip(A,B) if a+b<K ])>0
+    print("NO" if bad else "YES")
+
+
+
+
